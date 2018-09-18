@@ -2,7 +2,7 @@
   <div class="container">
     <div class="card">
       <div class="card-top">
-        <h3>{{ nombre }}</h3>
+        <h3>{{ nombre }} | {{ destino }}</h3>
         <span>({{ carrera }})</span>
       </div>
       <div class="card-description">
@@ -18,6 +18,7 @@ export default {
   name: "TarjetaViaje",
   props: {
     nombre: String,
+    destino: String,
     carrera: String,
     descripcion: String
   }

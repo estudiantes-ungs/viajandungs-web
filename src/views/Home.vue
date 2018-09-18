@@ -4,7 +4,8 @@
     <div class="list-group">
       <TarjetaViaje v-for="(v, pk) in viajes" 
         :nombre="v.name" 
-        carrera="Sistemas" 
+        :destino="v.destination"
+        :carrera="v.career" 
         :descripcion="v.description" 
         :key="pk" />
     </div>
@@ -32,6 +33,7 @@ export default {
   methods: {
     getUsers() {
       axios.get("http://127.0.0.1:8000/viajeviajes").then(res => {
+        console.log(res.data);
         this.viajes = res.data;
       });
     }
