@@ -1,12 +1,15 @@
 <template>
   <div class="container">
-    <h3>Viajes</h3>
+    <h3>{{ title }}</h3>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  props: {
+    title: String
+  }
 };
 </script>
 

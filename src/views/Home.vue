@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-    <Header />
+  <div>
+    <Header title="Viajes" />
     <div class="list-group">
       <TarjetaViaje v-for="(v, pk) in viajes" 
         :nombre="v.name" 
@@ -25,7 +25,9 @@ export default {
     TarjetaViaje
   },
   data() {
-    return { viajes: [] };
+    return {
+      viajes: []
+    };
   },
   mounted() {
     this.getUsers();
@@ -33,7 +35,6 @@ export default {
   methods: {
     getUsers() {
       axios.get("http://127.0.0.1:8000/viajeviajes").then(res => {
-        console.log(res.data);
         this.viajes = res.data;
       });
     }

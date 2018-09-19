@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div id="nav" class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <span class="navbar-brand">Viajandungs</span>
+      <router-link to="/"><span class="navbar-brand">Viajandungs</span></router-link>
       <div class="nav navbar-nav">
-        <router-link to="/" class="nav-item nav-link"><li>Log in</li></router-link>
+        <router-link to="/login" class="nav-item nav-link"><li>Log in</li></router-link>
       </div>
     </div>
     <router-view/>
