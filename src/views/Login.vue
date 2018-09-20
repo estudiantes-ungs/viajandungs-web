@@ -10,7 +10,7 @@
     
         <div class="form-group">
           <label>Constraseña</label>
-          <input type="password" class="form-control">
+          <input type="password" autocomplete="password" class="form-control">
         </div>
         <button type="submit" class="btn btn-primary">Entrar</button>
       </form>
