@@ -1,11 +1,17 @@
 <template>
   <div>
     <Header :title="this.viaje.name" />
+    <DescripcionViaje 
+      :destino="this.viaje.destination" 
+      :descripcion="this.viaje.description"
+      :fechaIda="this.viaje.date" />
+    <hr />
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header.vue";
+import DescripcionViaje from "@/components/DescripcionViaje.vue";
 const axios = require("axios");
 
 export default {
