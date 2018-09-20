@@ -1,15 +1,16 @@
 <template>
   <div class="container">
-    <div class="card">
-      <div class="card-top">
-        <h3>{{ nombre }} | {{ destino }}</h3>
-        <span>({{ carrera }})</span>
+    <router-link :to=" '/viaje/' + id">
+      <div class="card">
+        <div class="card-top">
+          <h3>{{ nombre }} | {{ destino }}</h3>
+          <span>({{ carrera }})</span>
+        </div>
+        <div class="card-description">
+          <span>{{ descripcion }}</span>
+        </div>
       </div>
-      <div class="card-description">
-        <span>{{ descripcion }}</span>
-      </div>
-    </div>
-
+    </router-link>
   </div>
 </template>
 
@@ -20,7 +21,8 @@ export default {
     nombre: String,
     destino: String,
     carrera: String,
-    descripcion: String
+    descripcion: String,
+    id: Number
   }
 };
 </script>
@@ -29,6 +31,10 @@ export default {
   .container
     margin-bottom 10px
     cursor pointer
+    
+    a
+    &:hover
+      text-decoration none
 
   .card
     display flex

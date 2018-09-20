@@ -2,12 +2,13 @@
   <div>
     <Header title="Viajes" />
     <div class="list-group">
-      <TarjetaViaje v-for="(v, pk) in viajes" 
+        <TarjetaViaje v-for="(v, pk) in viajes" 
         :nombre="v.name" 
         :destino="v.destination"
         :carrera="v.career" 
         :descripcion="v.description" 
-        :key="pk" />
+        :key="pk"
+        :id="v.pk" />
     </div>
   </div>
 </template>
@@ -30,10 +31,10 @@ export default {
     };
   },
   mounted() {
-    this.getUsers();
+    this.getViajes();
   },
   methods: {
-    getUsers() {
+    getViajes() {
       axios.get("http://127.0.0.1:8000/viajeviajes").then(res => {
         this.viajes = res.data;
       });
