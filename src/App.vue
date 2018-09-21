@@ -9,3 +9,8 @@
     <router-view/>
   </div>
 </template>
+
+<style lang="stylus">
+  .container
+    color #222
+</style>

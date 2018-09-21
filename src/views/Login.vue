@@ -27,3 +27,10 @@ export default {
   components: { Header }
 };
 </script>
+
+<style lang="stylus" scoped>
+  input
+    border solid .1rem rgba(26,26,26,.25)
+    &:focus
+      border solid .1rem rgba(0,0,0,0)
+</style>
