@@ -6,7 +6,7 @@
         :nombre="v.name" 
         :destino="v.destination"
         :carrera="v.career" 
-        :descripcion="v.description" 
+        :descripcionCorta="v.shortDescription"
         :key="pk"
         :id="v.pk" />
     </div>

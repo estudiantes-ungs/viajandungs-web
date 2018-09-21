@@ -7,7 +7,7 @@
           <span>({{ carrera }})</span>
         </div>
         <div class="card-description">
-          <span>{{ descripcion }}</span>
+          <span>{{ descripcionCorta }}</span>
         </div>
       </div>
     </router-link>
@@ -21,7 +21,7 @@ export default {
     nombre: String,
     destino: String,
     carrera: String,
-    descripcion: String,
+    descripcionCorta: String,
     id: Number
   }
 };

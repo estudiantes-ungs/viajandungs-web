@@ -2,23 +2,34 @@
   <div>
     <Header :title="this.viaje.name" />
     <DescripcionViaje 
-      :destino="this.viaje.destination" 
-      :descripcion="this.viaje.description"
-      :fechaIda="this.viaje.date" />
+      :destino="this.viaje.destination"
+      :descripcionLarga="this.viaje.longDescription"
+      :fechaIda="this.viaje.departureDate"
+      :fechaVuelta="this.viaje.returnDate"
+      :url="this.viaje.eventUrl" />
+    <BtnSumarse />
     <hr />
+    <NoticiasViaje />
+    <hr />
+    <BtnSumarse />
+    <br />
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header.vue";
 import DescripcionViaje from "@/components/DescripcionViaje.vue";
+import NoticiasViaje from "@/components/NoticiasViaje.vue";
+import BtnSumarse from "@/components/BtnSumarse.vue";
 const axios = require("axios");
 
 export default {
   name: "Viaje",
   components: {
     Header,
-    DescripcionViaje
+    DescripcionViaje,
+    NoticiasViaje,
+    BtnSumarse
   },
   data() {
     return {
