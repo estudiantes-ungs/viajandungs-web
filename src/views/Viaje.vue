@@ -9,9 +9,7 @@
       :url="this.viaje.eventUrl" />
     <BtnSumarse />
     <hr />
-    <NoticiasViaje />
-    <hr />
-    <BtnSumarse />
+    <NoticiasViaje :id="id" />
     <br />
   </div>
 </template>
