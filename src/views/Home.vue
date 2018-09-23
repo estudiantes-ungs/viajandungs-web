@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     getViajes() {
-      axios.get("http://127.0.0.1:8000/viajeviajes").then(res => {
+      axios.get("http://127.0.0.1:8000/viajes").then(res => {
         this.viajes = res.data;
       });
     }
