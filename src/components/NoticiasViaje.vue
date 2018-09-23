@@ -3,7 +3,7 @@
     <Header title="Noticias" />
     <div class="container">
       <h5 v-if="!noticias[0]">No hay noticias publicadas sobre este viaje</h5>
-      <NoticiaViaje v-for="(n, pk) in noticias"
+      <NoticiaViaje v-for="(n, pk) in noticias.slice().reverse()"
         :titulo="n.name" 
         :textoNoticia="n.text" 
         :fecha="n.createdAt"
@@ -39,7 +39,6 @@ export default {
         .get("http://127.0.0.1:8000/viajenoticias/?viaje=" + this.id)
         .then(res => {
           this.noticias = res.data;
-          console.log(this.noticias);
         });
     }
   }
