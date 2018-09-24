@@ -24,6 +24,10 @@ export default new Router({
     {
       path: "/viaje/:id",
       component: () => import("./views/Viaje.vue")
+    },
+    {
+      path: "/*",
+      component: () => import("./views/BadUrl.vue")
     }
   ]
 });
