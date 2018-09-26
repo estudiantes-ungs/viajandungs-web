@@ -22,6 +22,10 @@ export default new Router({
       component: () => import("./views/Viaje.vue")
     },
     {
+      path: "/viaje/:id/noticia/nueva",
+      component: () => import("./views/NuevaNoticia")
+    },
+    {
       path: "/*",
       component: () => import("./views/BadUrl.vue")
     }
