@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Header title="Noticias" />
+    <div class="top-bar">
+      <Header title="Noticias" />
+      <a :href="'/#/viaje/' + id + '/noticia/nueva'"><button class="btn btn-secondary">Agregar noticia</button></a>
+    </div>
     <div class="container">
       <h5 v-if="!noticias[0]">No hay noticias publicadas sobre este viaje</h5>
       <NoticiaViaje v-for="(n, pk) in noticias.slice().reverse()"
@@ -48,4 +51,12 @@ export default {
 <style lang="stylus" scoped>
   h5
     text-align center
+  
+  .top-bar
+    display flex
+    align-items center
+    margin-bottom 1em
+
+  a
+    float right
 </style>

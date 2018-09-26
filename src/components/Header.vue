@@ -16,5 +16,8 @@ export default {
 <style lang="stylus" scoped>
   .container
     margin 20px
+  
+  h3
+    margin 0
 
 </style>
