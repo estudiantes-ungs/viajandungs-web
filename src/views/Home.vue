@@ -2,13 +2,13 @@
   <div>
     <Header title="Viajes" />
     <div class="list-group">
-        <TarjetaViaje v-for="(v, pk) in viajes" 
+        <TarjetaViaje v-for="(v, id) in viajes" 
         :nombre="v.name" 
         :destino="v.destination"
         :carrera="v.career" 
         :descripcionCorta="v.shortDescription"
-        :key="pk"
-        :id="v.pk" />
+        :key="id"
+        :id="v.id" />
     </div>
   </div>
 </template>
@@ -25,10 +25,10 @@ export default {
     Header,
     TarjetaViaje
   },
-  data() {
-    return {
-      viajes: []
-    };
+  computed: {
+    viajes() {
+      return this.$store.state.viajes;
+    }
   },
   mounted() {
     this.getViajes();
