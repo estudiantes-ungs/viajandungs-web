@@ -39,7 +39,7 @@ export default {
   methods: {
     getNoticias() {
       axios
-        .get("http://127.0.0.1:8000/noticias/?viaje=" + this.id)
+        .get("http://127.0.0.1:8000/api/noticias/?viaje=" + this.id)
         .then(res => {
           this.noticias = res.data;
         });

@@ -35,7 +35,7 @@ export default {
   methods: {
     postNoticia() {
       axios
-        .post("http://127.0.0.1:8000/noticias/?viaje=" + this.id, {
+        .post("http://127.0.0.1:8000/api/noticias/?viaje=" + this.id, {
           viaje: this.id,
           name: this.name,
           text: this.text

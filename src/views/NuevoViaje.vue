@@ -33,7 +33,7 @@
         </div>
         <div class="form-group">
           <label>Descripción</label>
-          <textarea v-model="longDescription" class="form-control"></textarea>          
+          <textarea v-model="description" class="form-control"></textarea>          
         </div>
         <div class="form-group">
           <label>Url del evento</label>
@@ -61,7 +61,7 @@ export default {
       destination: "",
       career: "",
       shortDescription: "",
-      longDescription: "",
+      description: "",
       eventUrl: "",
       departureDate: "",
       returnDate: ""
@@ -70,18 +70,20 @@ export default {
   methods: {
     postViaje() {
       axios
-        .post("http://127.0.0.1:8000/viajes/", {
+        .post("http://127.0.0.1:8000/api/viajes/", {
           name: this.name,
           destination: this.destination,
           career: this.career,
           shortDescription: this.shortDescription,
-          longDescription: this.longDescription,
+          description: this.description,
           eventUrl: this.eventUrl,
           departureDate: this.departureDate,
           returnDate: this.returnDate
         })
         .then(res => {
-          console.log(res);
+          if (res.status == "201") {
+            this.$router.push("#");
+          }
         });
     }
   }

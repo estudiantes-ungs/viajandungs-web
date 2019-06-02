@@ -3,7 +3,7 @@
     <Header :title="this.viaje.name" />
     <DescripcionViaje 
       :destino="this.viaje.destination"
-      :descripcionLarga="this.viaje.longDescription"
+      :descripcionLarga="this.viaje.description"
       :fechaIda="this.viaje.departureDate"
       :fechaVuelta="this.viaje.returnDate"
       :url="this.viaje.eventUrl" />
@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     getViaje() {
-      axios.get("http://127.0.0.1:8000/viajes/" + this.id).then(res => {
+      axios.get("http://127.0.0.1:8000/api/viajes/" + this.id).then(res => {
         this.viaje = res.data;
       });
     }
