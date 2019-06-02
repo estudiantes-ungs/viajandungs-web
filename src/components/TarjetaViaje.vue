@@ -11,10 +11,15 @@
         </div>
       </div>
     </router-link>
+    <div class="btn-eliminar" v-on:click="deleteViaje()">
+      <font-awesome-icon icon="trash" />
+    </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "TarjetaViaje",
   props: {
@@ -23,11 +28,24 @@ export default {
     carrera: String,
     descripcionCorta: String,
     id: Number
+  },
+  methods: {
+    deleteViaje() {
+      axios.delete("http://127.0.0.1:8000/api/viajes/" + this.id).then(res => {
+        if (res.status == "200") {
+          this.$parent.getViajes();
+        }
+      });
+    }
   }
 };
 </script>
 
 <style lang="stylus" scoped>
+
+  h3
+    margin 0 10px 0 0
+
   .container
     margin-bottom 10px
     cursor pointer
@@ -53,7 +71,14 @@ export default {
     margin 0 0 10px 10px
     color #555
 
-  h3
-    margin 0 10px 0 0
+  .btn-eliminar
+    position relative
+    float right
+    margin-top -65px
+    margin-right 10px
+    padding 15px
+
+    &:hover
+      color red
 
 </style>
